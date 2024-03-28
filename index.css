@@ -1,0 +1,397 @@
+section:not(#profile) {
+    display: none;
+}
+nav {
+    background-color: #1565c0;
+    border-radius: 20px; 
+    margin-bottom: 20px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 18px; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px); 
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+nav ul li {
+    margin: 0; 
+    padding: 0; 
+}
+
+nav ul li a {
+    margin: 0; 
+    padding: 12px 18px; 
+}
+#login {
+    background-color: #f0f0f0; 
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px; 
+    margin: 20px auto; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+#login h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+#login label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+#login input[type="text"],
+#login input[type="password"] {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+#login input[type="submit"] {
+    width: 100%; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #1565c0; 
+    color: #fff; 
+    cursor: pointer; 
+}
+#login input[type="submit"]:hover {
+    background-color: #0d47a1; 
+}
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+#profile {
+    background-image: url('p2.png'); 
+    background-size: cover; 
+    background-position: center; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    animation: fadeIn 1s ease-in-out, zoomBackground 10s infinite alternate; 
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes zoomBackground {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+p {
+    text-align: center;
+    margin: auto;
+    font-size: x-large;
+    color: white; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+    padding: 10px; 
+    background-color: #d1c412;
+    border-radius: 10px; 
+    max-width: 80%; 
+    margin-top: 20px; 
+    animation: fadeIn 2s ease; 
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1; 
+    }
+}
+h1 {
+    text-align: center; 
+    margin-top: 20px; 
+}
+h2{
+    text-align: center;
+    margin: auto;
+    font-size: px;
+}
+#bus-booking {
+    background-image: url('pic.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeInCenter 1s ease;
+}
+#busBookingForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    margin: auto; 
+    margin-top: auto; 
+    margin-bottom: auto; 
+    animation: fadeInForm 1s ease;
+}
+@keyframes fadeInForm {
+    0% {
+        opacity: 0; 
+        transform: translateY(-20px); 
+    }
+    100% {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+#train-booking {
+    background-image: url('train.png');
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeInCenter 1s ease;
+}
+
+#trainBookingForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px; 
+    border-radius: 10px;
+    max-width: 800px; 
+    width: 100%; 
+    margin: 20px auto; 
+}
+
+@keyframes fadeInCenter {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#flight-booking {
+    background-image: url('flight.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeInCenter 1s ease;
+}
+
+#flightBookingForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+@keyframes fadeInCenter {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#taxi-booking {
+    background-image: url('taxi.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeInCenter 1s ease;
+}
+
+#taxiBookingForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+@keyframes fadeInCenter {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#hotel-booking {
+    background-image: url('hotel.png'); 
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeInCenter 1s ease;
+}
+
+#hotelBookingForm {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+@keyframes fadeInCenter {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#confirmation {
+    text-align: center;
+    padding: 50px;
+}
+
+.confirmation-message {
+    margin-bottom: 30px;
+}
+
+.confirmation-message i {
+    font-size: 48px;
+    color: #4CAF50; 
+}
+.confirmation-message h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+.booking-details {
+    margin-bottom: 30px;
+}
+.booking-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.booking-details h2 {
+    margin: 10px 0;
+}
+.explore-more {
+    display: inline-block;
+    background-color: #1565c0; 
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.explore-more:hover {
+    background-color: #0d47a1; 
+}
+
+#about {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+.container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container ul li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.container ul li strong {
+    font-weight: bold;
+}

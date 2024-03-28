@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script type="text/babel" src="index.js"></script>
+<script type="text/babel">
+    function Navigation() {
+        return (
+            <nav>
+                <ul>
+                    <li><a href="#" onClick={() => handleNavigation('profile')}><i className="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('event-selection')}><i className="fas fa-calendar-alt"></i> Event Selection</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('bus-booking')}><i className="fas fa-bus"></i> Bus Booking</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('train-booking')}><i className="fas fa-train"></i> Train Booking</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('flight-booking')}><i className="fas fa-plane"></i> Flight Booking</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('taxi-booking')}><i className="fas fa-taxi"></i> Taxi Booking</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('hotel-booking')}><i className="fas fa-hotel"></i> Hotel Booking</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('confirmation')}><i className="fas fa-check-circle"></i> Confirmation</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('login')}><i className="fas fa-user"></i> Login</a></li>
+                    <li><a href="#" onClick={() => handleNavigation('about')}>About</a></li>
+                </ul>
+            </nav>
+        );
+    }
+    ReactDOM.render(<Navigation />, document.getElementById('root'));
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section, index) => {
+            if (index === 0) {
+                section.style.display = 'block'; 
+            } else {
+                section.style.display = 'none'; 
+            }
+        });
+    });
+</script>
+<section id="profile">
+        <p>"Welcome to our gateway to adventure, where every click opens a world of possibilities!"</p>
+</section>
+<section id="event-selection">
+    <h2>Event Selection</h2>
+    <iframe src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York" style="border: 0; width: 100%; height: 600px;"></iframe>
+</section>
+<section id="bus-booking">
+    <h2>Bus Booking</h2>
+    <form id="busBookingForm" onsubmit="return false;">
+        <label for="departure">Departure City:</label>
+        <input type="text" id="departure" name="departure" required><br><br>
+        <label for="destination">Destination City:</label>
+        <input type="text" id="destination" name="destination" required><br><br>
+        <label for="date">Departure Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="passengers">Number of Passengers:</label>
+        <input type="number" id="passengers" name="passengers" min="1" required><br><br>
+        <input type="submit" value="Book Tickets">
+    </form>
+</section>
+<section id="train-booking">
+    <h2>Train Booking</h2>
+    <form id="trainBookingForm" onsubmit="return false;">
+        <label for="departure">Departure Station:</label>
+        <input type="text" id="departure" name="departure" required>
+        <br>
+        <br>
+        <label for="destination">Destination Station:</label>
+        <input type="text" id="destination" name="destination" required><br><br>
+        <label for="date">Departure Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="class">Class:</label>
+        <select id="class" name="class" required>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First Class</option>
+        </select><br><br>
+        <input type="submit" value="Book Tickets">
+    </form>
+</section>
+<section id="flight-booking">
+    <h2>Flight Booking</h2>
+    <form id="flightBookingForm" onsubmit="return false;">
+        <label for="departure">Departure Airport:</label>
+        <input type="text" id="departure" name="departure" required>
+        <br>
+        <br>
+        <label for="destination">Destination Airport:</label>
+        <input type="text" id="destination" name="destination" required>
+        <br>
+        <br>
+        <label for="date">Departure Date:</label>
+        <input type="date" id="date" name="date" required>
+        <br>
+        <br>
+        <label for="passengers">Number of Passengers:</label>
+        <input type="number" id="passengers" name="passengers" min="1" required>
+        <br>
+        <br>
+        <input type="submit" value="Book Tickets">
+    </form>
+</section>
+<section id="taxi-booking">
+    <h2>Taxi Booking</h2>
+    <form id="taxiBookingForm" onsubmit="return false;">
+        <label for="pickup-location">Pickup Location:</label>
+        <input type="text" id="pickup-location" name="pickup-location" required><br><br>
+        <label for="dropoff-location">Dropoff Location:</label>
+        <input type="text" id="dropoff-location" name="dropoff-location" required><br><br>
+        <label for="date">Pickup Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="passengers">Number of Passengers:</label>
+        <input type="number" id="passengers" name="passengers" min="1" required><br><br>
+        <input type="submit" value="Book Taxi">
+    </form>
+</section>
+<section id="hotel-booking">
+    <h2>Hotel Booking</h2>
+    <form id="hotelBookingForm" onsubmit="return false;">
+        <label for="check-in">Check-in Date:</label>
+        <input type="date" id="check-in" name="check-in" required><br><br>
+        <label for="check-out">Check-out Date:</label>
+        <input type="date" id="check-out" name="check-out" required><br><br>
+        <label for="rooms">Number of Rooms:</label>
+        <input type="number" id="rooms" name="rooms" min="1" required><br><br>
+        <input type="submit" value="Book Hotel">
+    </form>
+</section>
+<section id="confirmation">
+    <div class="confirmation-message">
+        <i class="fas fa-check-circle"></i>
+        <h2>Thank You!</h2>
+        <p>Your booking has been confirmed.</p>
+    </div>
+    <div class="booking-details">
+        <h2>Booking Details</h2>
+        <p><strong>Booking Reference:</strong> ABC123</p>
+        <p><strong>Date: January 1, 2024</p>
+        <p><strong>Time:10:00 AM</p>
+    </div>
+    <a href="#" class="explore-more">Explore More</a>
+</section>
+<section id="login">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return false;">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+</section>
+<section id="about">
+    <div class="container">
+        <h2>About Our Ticket Booking Service</h2>
+        <p>Welcome to our ticket booking platform! We strive to make the process of booking tickets for various modes of transportation and accommodations seamless and hassle-free.</p>
+        <p>Our mission is to provide users with a convenient and reliable way to plan their travel itineraries, whether it's for buses, trains, flights, taxis, or hotels.</p>
+        <p>Founded in [year], we have been committed to enhancing the travel experience for our users by continuously improving our platform and expanding our services.</p>
+        <p>Meet the team behind our ticket booking service:</p>
+        <ul>
+            <li><strong>M.Anandha meenachi</strong> - CEO & Founder</li>
+            <li><strong>Murgan</strong> - Head of Product Development</li>
+        
+        </ul>
+        <p>If you have any questions, feedback, or suggestions for improvement, please don't hesitate to <a href="contact.html">contact us</a>.</p>
+    </div>
+</section>
+</body>
+</html>
+
