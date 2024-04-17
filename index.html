@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -57,99 +57,86 @@
 </section>
 <section id="bus-booking">
     <h2>Bus Booking</h2>
-    <form id="busBookingForm" onsubmit="return false;">
+    <form id="busBookingForm" onsubmit="handleBookingFormSubmit(event, 'Bus')">
         <label for="departure">Departure City:</label>
         <input type="text" id="departure" name="departure" required><br><br>
         <label for="destination">Destination City:</label>
         <input type="text" id="destination" name="destination" required><br><br>
         <label for="date">Departure Date:</label>
         <input type="date" id="date" name="date" required><br><br>
-        <label for="passengers">Number of Passengers:</label>
-        <input type="number" id="passengers" name="passengers" min="1" required><br><br>
-        <input type="submit" value="Book Tickets">
+        <input type="submit" value="Book Bus Tickets">
     </form>
 </section>
 <section id="train-booking">
     <h2>Train Booking</h2>
-    <form id="trainBookingForm" onsubmit="return false;">
+    <form id="trainBookingForm" onsubmit="handleBookingFormSubmit(event, 'Train')">
         <label for="departure">Departure Station:</label>
-        <input type="text" id="departure" name="departure" required>
+        <input type="text" id="train-departure" name="departure" required>
         <br>
         <br>
         <label for="destination">Destination Station:</label>
-        <input type="text" id="destination" name="destination" required><br><br>
+        <input type="text" id="train-destination" name="destination" required><br><br>
         <label for="date">Departure Date:</label>
-        <input type="date" id="date" name="date" required><br><br>
+        <input type="date" id="train-date" name="date" required><br><br>
         <label for="class">Class:</label>
-        <select id="class" name="class" required>
+        <select id="train-class" name="class" required>
             <option value="economy">Economy</option>
             <option value="business">Business</option>
             <option value="first">First Class</option>
         </select><br><br>
-        <input type="submit" value="Book Tickets">
+        <input type="submit" value="Book Train Tickets">
     </form>
 </section>
+
 <section id="flight-booking">
     <h2>Flight Booking</h2>
-    <form id="flightBookingForm" onsubmit="return false;">
+    <form id="flightBookingForm" onsubmit="handleBookingFormSubmit(event, 'Flight')">
         <label for="departure">Departure Airport:</label>
-        <input type="text" id="departure" name="departure" required>
+        <input type="text" id="flight-departure" name="departure" required>
         <br>
         <br>
         <label for="destination">Destination Airport:</label>
-        <input type="text" id="destination" name="destination" required>
+        <input type="text" id="flight-destination" name="destination" required>
         <br>
         <br>
         <label for="date">Departure Date:</label>
-        <input type="date" id="date" name="date" required>
+        <input type="date" id="flight-date" name="date" required>
         <br>
         <br>
         <label for="passengers">Number of Passengers:</label>
-        <input type="number" id="passengers" name="passengers" min="1" required>
+        <input type="number" id="flight-passengers" name="passengers" min="1" required>
         <br>
         <br>
-        <input type="submit" value="Book Tickets">
+        <input type="submit" value="Book Flight Tickets">
     </form>
 </section>
+
 <section id="taxi-booking">
     <h2>Taxi Booking</h2>
-    <form id="taxiBookingForm" onsubmit="return false;">
+    <form id="taxiBookingForm" onsubmit="handleBookingFormSubmit(event, 'Taxi')">
         <label for="pickup-location">Pickup Location:</label>
-        <input type="text" id="pickup-location" name="pickup-location" required><br><br>
+        <input type="text" id="taxi-pickup-location" name="pickup-location" required><br><br>
         <label for="dropoff-location">Dropoff Location:</label>
-        <input type="text" id="dropoff-location" name="dropoff-location" required><br><br>
+        <input type="text" id="taxi-dropoff-location" name="dropoff-location" required><br><br>
         <label for="date">Pickup Date:</label>
-        <input type="date" id="date" name="date" required><br><br>
+        <input type="date" id="taxi-date" name="date" required><br><br>
         <label for="passengers">Number of Passengers:</label>
-        <input type="number" id="passengers" name="passengers" min="1" required><br><br>
+        <input type="number" id="taxi-passengers" name="passengers" min="1" required><br><br>
         <input type="submit" value="Book Taxi">
     </form>
 </section>
+
 <section id="hotel-booking">
     <h2>Hotel Booking</h2>
-    <form id="hotelBookingForm" onsubmit="return false;">
+    <form id="hotelBookingForm" onsubmit="handleBookingFormSubmit(event, 'Hotel')">
         <label for="check-in">Check-in Date:</label>
-        <input type="date" id="check-in" name="check-in" required><br><br>
+        <input type="date" id="hotel-check-in" name="check-in" required><br><br>
         <label for="check-out">Check-out Date:</label>
-        <input type="date" id="check-out" name="check-out" required><br><br>
+        <input type="date" id="hotel-check-out" name="check-out" required><br><br>
         <label for="rooms">Number of Rooms:</label>
-        <input type="number" id="rooms" name="rooms" min="1" required><br><br>
+        <input type="number" id="hotel-rooms" name="rooms" min="1" required><br><br>
         <input type="submit" value="Book Hotel">
     </form>
-</section>
-<section id="confirmation">
-    <div class="confirmation-message">
-        <i class="fas fa-check-circle"></i>
-        <h2>Thank You!</h2>
-        <p>Your booking has been confirmed.</p>
-    </div>
-    <div class="booking-details">
-        <h2>Booking Details</h2>
-        <p><strong>Booking Reference:</strong> ABC123</p>
-        <p><strong>Date: January 1, 2024</p>
-        <p><strong>Time:10:00 AM</p>
-    </div>
-    <a href="#" class="explore-more">Explore More</a>
 </section>
 <section id="login">
     <h2>Login</h2>
@@ -160,7 +147,24 @@
         <input type="email" id="email" name="email" required><br><br>
         <input type="submit" value="Login">
     </form>
+</section> 
+
+<section id="confirmation" style="display: none;">
+    <div class="confirmation-message">
+        <i class="fas fa-check-circle"></i>
+        <h2>Thank You!</h2>
+        <p>Your booking has been confirmed.</p>
+    </div>
+    <div class="booking-details">
+        <h2>Booking Details</h2>
+        <p><strong>Booking Reference:</strong> <span id="bookingReference"></span></p>
+        <p><strong>Date:</strong> <span id="bookingDate"></span></p>
+        <p><strong>Time:</strong> <span id="bookingTime"></span></p>
+    
+    </div>
+
 </section>
+
 <section id="about">
     <div class="container">
         <h2>About Our Ticket Booking Service</h2>
